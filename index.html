@@ -1,26 +1,124 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Page</title>
+    <title>Library Aline</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #3b82f6, #06b6d4);
+            color: white;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        header {
+            background-color: rgba(2, 132, 199, 0.9);
+            color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+        }
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            margin-left: 20px;
+        }
+        nav {
+            display: flex;
+            gap: 15px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 12px 20px;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+        nav a:hover {
+            background-color: #facc15;
+            color: black;
+        }
+        .hero {
+            margin: 80px auto;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 40px;
+            width: 70%;
+            border-radius: 15px;
+            box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3);
+        }
+        h2 {
+            color: #facc15;
+        }
+        p {
+            font-size: 18px;
+            line-height: 1.8;
+            color: white;
+        }
+        .button-container {
+            margin-top: 25px;
+        }
+        .button-container a {
+            background-color: #facc15;
+            color: black;
+            padding: 12px 20px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+        .button-container a:hover {
+            background-color: #0284c7;
+            color: white;
+        }
+        footer {
+            background-color: rgba(2, 132, 199, 0.9);
+            color: white;
+            padding: 20px;
+            border-radius: 20px 20px 0 0;
+            margin-top: 50px;
+            box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.3);
+        }
+    </style>
 </head>
 <body>
-                                     <h1>Library Aline</h1>
-    <h2>Saya adalah Mahasiswa Ilmu Perpustakaan dan Sains Informasi, Universitas Sumatera Utara</h2>
-    <p>Web ini adalah Pemenuhan tugas Mata Kuliah Pengembangan Web</p>
-    
-    <h4>Menu</h4> 
-    <ul>
-        <Ii>
-         <a href="aboutme.html">Tentang Saya</a><br>
-        </Ii>
-        <Ii>
-         <a href="contactus.html">Kritik dan Saran</a><br>
-        </Ii>
-        <Ii>
-        <a href="https://library.usu.ac.id/">perpustakaan usu</a><br>
-        </Ii>
-    </ul>
+
+<header>
+    <div class="logo">Library Aline</div>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="aboutme.html">Tentang</a>
+        <a href="contactus.html">Feedback</a>
+    </nav>
+</header>
+
+<div class="hero">
+    <h2>Selamat Datang di Library Aline</h2>
+    <p>Halo! Saya Aline Najwa Pelumi Siregar, Saya adalah mahasiswa dari Program Studi Ilmu Perpustakaan dan Sains Informasi di Universitas Sumatera Utara. Website ini dibuat sebagai bagian dari tugas Mata Kuliah Pengembangan Web, yang bertujuan untuk mempelajari dan menerapkan konsep dasar dalam pembuatan serta desain website yang interaktif dan mudah digunakan.  
+Melalui proyek ini, saya ingin meningkatkan kemampuan dalam pengembangan web, terutama dalam pemanfaatan HTML, CSS, dan teknologi pendukung lainnya yang berperan dalam pengelolaan informasi digital. Selain sebagai pemenuhan tugas akademik, saya juga berharap website ini dapat menjadi sarana pembelajaran yang bermanfaat dan memiliki peluang untuk terus dikembangkan di masa mendatang. Semoga website ini dapat memberikan pengalaman yang baik bagi para penggunanya.</p>
+    <p>Website ini berfokus pada perpustakaan digital yang memberikan kemudahan bagi siapa saja untuk mengakses koleksi buku, jurnal, dan referensi ilmiah secara online tanpa batasan ruang dan waktu.</p>
+    <div class="button-container">
+        <a href="https://library.usu.ac.id/" target="_blank">Kunjungi Perpustakaan</a>
+    </div>
+</div>
+
+<footer>
+    &copy; 2025 Library Aline
+</footer>
+<script>
+    window.onload = function() {
+        setTimeout(() => {
+            alert("Selamat datang di Perpustakaan Digital!");
+        }, 1000);
+    };
+</script>
+
 </body>
-</html> <i..akhir dokumen HTML..>
+</html>
+
