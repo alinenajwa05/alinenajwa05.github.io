@@ -6,7 +6,7 @@
     <title>Feedback</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        body {
+       body {
             font-family: 'Poppins', sans-serif;
             background: linear-gradient(135deg, #3b82f6, #06b6d4);
             color: white;
@@ -15,15 +15,48 @@
             text-align: center;
         }
         .container {
-            width: 50%;
+            width: 70%;
             background: rgba(255, 255, 255, 0.2);
             margin: 50px auto;
             padding: 40px;
             border-radius: 15px;
             box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3);
         }
-        h2 {
+        h2, h3 {
             color: #facc15;
+        }
+        p, td {
+            font-size: 18px;
+            line-height: 1.8;
+            color: white;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background-color: rgba(255, 255, 255, 0.3);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        th, td {
+            border: 1px solid white;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #2563eb;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        footer {
+            background-color: rgba(2, 132, 199, 0.9);
+            color: white;
+            padding: 20px;
+            border-radius: 20px 20px 0 0;
+            margin-top: 50px;
+            box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.3);
         }
         label {
             font-weight: bold;
@@ -59,21 +92,28 @@
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: rgba(2, 132, 199, 0.9);">
     <div class="container-fluid">
         <a class="navbar-brand" href="#">Library Aline</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a class="nav-link" href="index.html">Homepage</a></li>
-                <li class="nav-item"><a class="nav-link" href="aboutme.html">Tentang</a></li>
-                <li class="nav-item"><a class="nav-link" href="contactus.html">Feedback</a></li>
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Homepage</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="aboutme.html">Tentang</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contactus.html">Feedback</a>
+                </li>
             </ul>
         </div>
     </div>
 </nav>
+
 
 <div class="container">
     <h2>Hubungi Kami</h2>
