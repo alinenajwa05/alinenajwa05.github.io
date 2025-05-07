@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dini Library - Seputar Saya</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+      }
+
+      .fade-in {
+        opacity: 0;
+        animation: fadeIn 1.5s forwards;
+      }
+
+      @keyframes fadeIn {
+        to {
+          opacity: 1;
+        }
+      }
+
+      .scroll-animate {
+        opacity: 0;
+        transform: translateY(20px);
+        animation: scrollAnim 1s ease-out forwards;
+      }
+
+      @keyframes scrollAnim {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .container {
+        background-color: white;
+        border: 1px solid #e0e0e0;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+        border-radius: 0.5rem;
+        padding: 2rem;
+        max-width: 768px;
+        width: 100%;
+        margin-bottom: 2rem;
+      }
+
+      .container h2 {
+        color: #4f46e5;
+        font-size: 2.5rem;
+        font-weight: bold;
+        margin-bottom: 1.5rem;
+        text-align: center;
+      }
+
+      .container p {
+        color: #555;
+        line-height: 1.75;
+        margin-bottom: 2rem;
+      }
+
+      .container h3 {
+        color: #4f46e5;
+        font-size: 2rem;
+        font-weight: bold;
+        margin-top: 2.5rem;
+        margin-bottom: 1rem;
+      }
+
+      .container table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 1rem;
+      }
+
+      .container th,
+      .container td {
+        padding: 0.75rem;
+        text-align: left;
+        border-bottom: 1px solid #f0f0f0;
+      }
+
+      .container th {
+        font-weight: bold;
+        color: #333;
+        width: 30%;
+      }
+
+      .container tr:last-child th,
+      .container tr:last-child td {
+        border-bottom: none;
+      }
+    </style>
+  </head>
+
+  <body
+    class="bg-gray-100 font-sans min-h-screen flex flex-col items-center justify-center p-6"
+  >
+    <div class="container scroll-animate">
+      <h2>Tentang Library Aline</h2>
+      <p>
+        Library Aline merupakan perpustakaan digital yang menghadirkan inovasi
+        dalam akses informasi. Melalui platform ini, siapa pun dapat menjelajahi
+        koleksi buku, jurnal, dan referensi ilmiah secara daring tanpa terikat
+        oleh ruang dan waktu. Kehadiran perpustakaan digital ini bertujuan untuk
+        mendukung pembelajaran yang lebih luas, efisien, dan mudah diakses oleh
+        semua kalangan.
+      </p>
+      <h3>Informasi Pribadi</h3>
+      <table>
+        <tr>
+          <th>Nama</th>
+          <td>Aline Najwa Pelumi Siregar</td>
+        </tr>
+        <tr>
+          <th>NIM</th>
+          <td>220709072</td>
+        </tr>
+        <tr>
+          <th>Program Studi</th>
+          <td>Perpustakaan dan Sains Informasi</td>
+        </tr>
+        <tr>
+          <th>Fakultas</th>
+          <td>Fakultas Ilmu Budaya</td>
+        </tr>
+        <tr>
+          <th>Semester</th>
+          <td>6</td>
+        </tr>
+        <tr>
+          <th>Universitas</th>
+          <td>Universitas Sumatera Utara</td>
+        </tr>
+        <tr>
+          <th>Alamat</th>
+          <td>Gg. Mangga No.7,Medan Sunggal</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="mt-8">
+      <a
+        href="Homework.html"
+        class="inline-flex items-center gap-2 bg-indigo-700 text-white px-8 py-3 rounded-full hover:bg-indigo-800 transition duration-300 shadow-lg text-base font-semibold"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-5 w-5"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M15 19l-7-7 7-7"
+          />
+        </svg>
+        Kembali
+      </a>
+    </div>
+
+    <script>
+      const scrollAnimateElements =
+        document.querySelectorAll(".scroll-animate");
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("scrollAnim");
+          }
+        });
+      });
+
+      scrollAnimateElements.forEach((el) => observer.observe(el));
+    </script>
+  </body>
+</html>

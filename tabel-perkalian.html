@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tabel Perkalian & Kalkulator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.min.css"
+    />
+    <style>
+      body {
+        font-family: "Nunito", sans-serif;
+        /* Contoh font modern */
+      }
+
+      .calculator-input {
+        background-color: #374151;
+        /* Darker input background */
+        border-color: #4b5563;
+      }
+
+      .calculator-input:focus {
+        ring-color: #6ee7b7;
+        /* Teal focus ring */
+      }
+
+      .calculator-button {
+        background-color: #17a398;
+        /* Vibrant teal button */
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+          0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      }
+
+      .calculator-button:hover {
+        background-color: #148b82;
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+          0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        transform: translateY(-2px);
+      }
+
+      .back-button {
+        border-color: #6ee7b7;
+        color: #6ee7b7;
+      }
+
+      .back-button:hover {
+        background-color: #6ee7b7;
+        color: #1f2937;
+        /* Dark text on hover */
+      }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body
+    class="bg-gradient-to-r from-gray-900 to-teal-800 min-h-screen pb-16 font-sans text-white"
+  >
+    <div class="container mx-auto my-16 max-w-4xl px-4">
+      <div class="text-center mb-12">
+        <h2
+          class="text-4xl font-extrabold text-transparent bg-gradient-to-r from-green-400 to-teal-500 bg-clip-text"
+        >
+          <i class="bi bi-grid-3x3-gap-fill mr-3"></i>Tabel Perkalian 1–10
+        </h2>
+        <p class="mt-2 text-lg text-gray-300">
+          Pelajari dan hitung perkalian dengan mudah.
+        </p>
+      </div>
+
+      <div class="overflow-x-auto mb-12 rounded-lg shadow-xl">
+        <table
+          class="min-w-full table-auto border-collapse border border-teal-700 bg-gray-800"
+        >
+          <thead class="bg-teal-700 text-white">
+            <tr>
+              <th class="px-6 py-4 text-center text-xl font-semibold">×</th>
+              <th class="px-4 py-3 text-center" colspan="10">
+                <div class="grid grid-cols-10 gap-1" id="tableHeader"></div>
+              </th>
+            </tr>
+          </thead>
+          <tbody id="tableBody"></tbody>
+        </table>
+      </div>
+
+      <hr class="my-8 border-gray-700" />
+      <div
+        class="bg-gray-800 p-8 rounded-xl shadow-2xl transform transition-all duration-300 hover:scale-105 border border-teal-700"
+      >
+        <h4
+          class="text-3xl font-bold text-teal-400 mb-6 flex items-center justify-center"
+        >
+          <i class="bi bi-calculator mr-3"></i>Kalkulator Perkalian Cepat
+        </h4>
+        <form id="kalkulatorForm">
+          <div class="flex justify-center gap-4 mb-8">
+            <input
+              type="number"
+              id="angka1"
+              placeholder="Angka 1"
+              class="w-1/3 px-5 py-3 border-2 rounded-lg text-white shadow-md focus:outline-none focus:ring-4 focus:ring-teal-500 focus:ring-opacity-60 transition duration-300 calculator-input"
+              required
+            />
+            <span class="text-5xl font-bold text-teal-500">×</span>
+            <input
+              type="number"
+              id="angka2"
+              placeholder="Angka 2"
+              class="w-1/3 px-5 py-3 border-2 rounded-lg text-white shadow-md focus:outline-none focus:ring-4 focus:ring-teal-500 focus:ring-opacity-60 transition duration-300 calculator-input"
+              required
+            />
+          </div>
+          <div class="text-center mt-6">
+            <button
+              type="submit"
+              class="px-10 py-4 text-white rounded-full shadow-lg transition duration-300 transform hover:scale-105 calculator-button font-semibold"
+            >
+              <i class="bi bi-check-circle mr-2"></i> Hitung Hasil
+            </button>
+          </div>
+        </form>
+        <div
+          id="hasil"
+          class="text-center mt-8 font-semibold text-2xl text-teal-400"
+        ></div>
+      </div>
+
+      <div class="text-center mt-8">
+        <a
+          href="Homework.html"
+          class="inline-flex items-center gap-2 px-6 py-3 border rounded-lg transition back-button font-semibold"
+        >
+          <i class="bi bi-arrow-left-circle"></i> Kembali ke Homework
+        </a>
+      </div>
+    </div>
+
+    <script>
+      // Generate multiplication table dynamically
+      function generateTable() {
+        const tableHeader = document.getElementById("tableHeader");
+        const tableBody = document.getElementById("tableBody");
+
+        // Create table header (1-10)
+        for (let i = 1; i <= 10; i++) {
+          const span = document.createElement("span");
+          span.classList.add(
+            "text-center",
+            "text-lg",
+            "font-semibold",
+            "text-teal-300"
+          );
+          span.textContent = i;
+          tableHeader.appendChild(span);
+        }
+
+        // Create table rows (1-10)
+        for (let i = 1; i <= 10; i++) {
+          const row = document.createElement("tr");
+
+          // First cell for the row header (1, 2, ..., 10)
+          const th = document.createElement("th");
+          th.classList.add(
+            "px-6",
+            "py-3",
+            "text-center",
+            "font-semibold",
+            "text-teal-300"
+          );
+          th.textContent = i;
+          row.appendChild(th);
+
+          // Create cells for multiplication results
+          for (let j = 1; j <= 10; j++) {
+            const td = document.createElement("td");
+            td.classList.add("px-4", "py-3", "text-center", "text-teal-100");
+            td.textContent = i * j;
+            row.appendChild(td);
+          }
+
+          // Append the row to the table body
+          tableBody.appendChild(row);
+        }
+      }
+
+      // Call the function to generate the table when the page loads
+      window.onload = generateTable;
+
+      // Kalkulator logic
+      document
+        .getElementById("kalkulatorForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          const a = parseFloat(document.getElementById("angka1").value);
+          const b = parseFloat(document.getElementById("angka2").value);
+          const hasil = a * b;
+          document.getElementById(
+            "hasil"
+          ).textContent = `${a} × ${b} = ${hasil}`;
+        });
+    </script>
+  </body>
+</html>
